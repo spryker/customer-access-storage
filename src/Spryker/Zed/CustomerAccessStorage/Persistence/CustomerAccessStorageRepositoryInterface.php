@@ -15,9 +15,6 @@ use Generated\Shared\Transfer\FilterTransfer;
  */
 interface CustomerAccessStorageRepositoryInterface
 {
-    /**
-     * @return \Generated\Shared\Transfer\CustomerAccessTransfer
-     */
     public function getUnauthenticatedCustomerAccess(): CustomerAccessTransfer;
 
     /**

@@ -42,11 +42,6 @@ class CustomerAccessStorageReader implements CustomerAccessStorageReaderInterfac
      */
     protected static $storageKeyBuilder;
 
-    /**
-     * @param \Spryker\Client\CustomerAccessStorage\Dependency\Client\CustomerAccessStorageToStorageClientInterface $storageClient
-     * @param \Spryker\Client\CustomerAccessStorage\Dependency\Service\CustomerAccessStorageToSynchronizationServiceInterface $synchronizationService
-     * @param \Spryker\Client\CustomerAccessStorage\Mapper\CustomerAccessStorageMapperInterface $customerAccessStorageMapper
-     */
     public function __construct(
         CustomerAccessStorageToStorageClientInterface $storageClient,
         CustomerAccessStorageToSynchronizationServiceInterface $synchronizationService,
@@ -57,9 +52,6 @@ class CustomerAccessStorageReader implements CustomerAccessStorageReaderInterfac
         $this->customerAccessStorageMapper = $customerAccessStorageMapper;
     }
 
-    /**
-     * @return \Generated\Shared\Transfer\CustomerAccessTransfer
-     */
     public function getUnauthenticatedCustomerAccess(): CustomerAccessTransfer
     {
         $this->readCustomerAccess();
@@ -74,9 +66,6 @@ class CustomerAccessStorageReader implements CustomerAccessStorageReaderInterfac
         return $customerAccessTransfer;
     }
 
-    /**
-     * @return \Generated\Shared\Transfer\CustomerAccessTransfer
-     */
     public function getAuthenticatedCustomerAccess(): CustomerAccessTransfer
     {
         $this->readCustomerAccess();
@@ -84,9 +73,6 @@ class CustomerAccessStorageReader implements CustomerAccessStorageReaderInterfac
         return $this->customerAccess;
     }
 
-    /**
-     * @return string
-     */
     protected function generateKey(): string
     {
         $synchronizationDataTransfer = new SynchronizationDataTransfer();
@@ -94,9 +80,6 @@ class CustomerAccessStorageReader implements CustomerAccessStorageReaderInterfac
         return $this->getStorageKeyBuilder()->generateKey($synchronizationDataTransfer);
     }
 
-    /**
-     * @return \Spryker\Service\Synchronization\Dependency\Plugin\SynchronizationKeyGeneratorPluginInterface
-     */
     protected function getStorageKeyBuilder(): SynchronizationKeyGeneratorPluginInterface
     {
         if (static::$storageKeyBuilder === null) {
@@ -106,9 +89,6 @@ class CustomerAccessStorageReader implements CustomerAccessStorageReaderInterfac
         return static::$storageKeyBuilder;
     }
 
-    /**
-     * @return void
-     */
     protected function readCustomerAccess(): void
     {
         $unauthenticatedCustomerAccess = $this->storageClient->get($this->generateKey());

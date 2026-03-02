@@ -26,9 +26,6 @@ class CustomerAccessStorageFactory extends AbstractFactory
         );
     }
 
-    /**
-     * @return \Spryker\Client\CustomerAccessStorage\Mapper\CustomerAccessStorageMapperInterface
-     */
     public function createCustomerAccessStorageMapper(): CustomerAccessStorageMapperInterface
     {
         return new CustomerAccessStorageMapper();

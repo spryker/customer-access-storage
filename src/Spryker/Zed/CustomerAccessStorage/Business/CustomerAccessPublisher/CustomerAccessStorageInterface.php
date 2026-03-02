@@ -9,8 +9,5 @@ namespace Spryker\Zed\CustomerAccessStorage\Business\CustomerAccessPublisher;
 
 interface CustomerAccessStorageInterface
 {
-    /**
-     * @return void
-     */
     public function publish(): void;
 }

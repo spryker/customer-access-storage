@@ -16,9 +16,6 @@ use Spryker\Zed\Kernel\Persistence\AbstractRepository;
  */
 class CustomerAccessStorageRepository extends AbstractRepository implements CustomerAccessStorageRepositoryInterface
 {
-    /**
-     * @return \Generated\Shared\Transfer\CustomerAccessTransfer
-     */
     public function getUnauthenticatedCustomerAccess(): CustomerAccessTransfer
     {
         $unauthenticatedCustomerAccess = $this->getFactory()

@@ -22,10 +22,6 @@ class CustomerAccessStorage implements CustomerAccessStorageInterface
      */
     protected $customerAccessStorageEntityManager;
 
-    /**
-     * @param \Spryker\Zed\CustomerAccessStorage\Persistence\CustomerAccessStorageRepositoryInterface $customerAccessStorageRepository
-     * @param \Spryker\Zed\CustomerAccessStorage\Persistence\CustomerAccessStorageEntityManagerInterface $customerAccessStorageEntityManager
-     */
     public function __construct(
         CustomerAccessStorageRepositoryInterface $customerAccessStorageRepository,
         CustomerAccessStorageEntityManagerInterface $customerAccessStorageEntityManager
@@ -34,9 +30,6 @@ class CustomerAccessStorage implements CustomerAccessStorageInterface
         $this->customerAccessStorageEntityManager = $customerAccessStorageEntityManager;
     }
 
-    /**
-     * @return void
-     */
     public function publish(): void
     {
         $this->customerAccessStorageEntityManager->storeData($this->customerAccessStorageRepository->getUnauthenticatedCustomerAccess());

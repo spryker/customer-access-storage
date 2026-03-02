@@ -36,9 +36,6 @@ class CustomerAccessPublisherTriggerPluginTest extends Unit
      */
     protected CustomerAccessStorageCommunicationTester $tester;
 
-    /**
-     * @return void
-     */
     public function testGetDataShouldReturnAnArrayWithCustomerAccessTransferWhenOffsetIsEqualToZero(): void
     {
         // Arrange
@@ -53,9 +50,6 @@ class CustomerAccessPublisherTriggerPluginTest extends Unit
         $this->assertSame(static::EXPECTED_ID_UNAUTHENTICATED_CUSTOMER_ACCESS, $data[0]->getIdUnauthenticatedCustomerAccess());
     }
 
-    /**
-     * @return void
-     */
     public function testGetDataShouldReturnEmptyArrayWhenOffsetIsNotEqualToZero(): void
     {
         // Arrange

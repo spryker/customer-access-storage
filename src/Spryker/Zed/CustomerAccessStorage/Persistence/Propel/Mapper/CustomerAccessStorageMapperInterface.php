@@ -12,10 +12,5 @@ use Propel\Runtime\Collection\Collection;
 
 interface CustomerAccessStorageMapperInterface
 {
-    /**
-     * @param \Propel\Runtime\Collection\Collection $customerAccessEntities
-     *
-     * @return \Generated\Shared\Transfer\CustomerAccessTransfer
-     */
     public function fillCustomerAccessTransferFromEntities(Collection $customerAccessEntities): CustomerAccessTransfer;
 }

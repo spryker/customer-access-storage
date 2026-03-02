@@ -38,41 +38,21 @@ class CustomerAccessStorageEventSubscriber extends AbstractPlugin implements Eve
         return $eventCollection;
     }
 
-    /**
-     * @param \Spryker\Zed\Event\Dependency\EventCollectionInterface $eventCollection
-     *
-     * @return void
-     */
     protected function addUnauthenticatedCustomerAccessUpdateListener(EventCollectionInterface $eventCollection): void
     {
         $eventCollection->addListenerQueued(CustomerAccessEvents::ENTITY_SPY_UNAUTHENTICATED_CUSTOMER_ACCESS_UPDATE, new CustomerAccessStorageBulkListener(), 0, null, $this->getConfig()->getEventQueueName());
     }
 
-    /**
-     * @param \Spryker\Zed\Event\Dependency\EventCollectionInterface $eventCollection
-     *
-     * @return void
-     */
     protected function addUnauthenticatedCustomerAccessCreateListener(EventCollectionInterface $eventCollection): void
     {
         $eventCollection->addListenerQueued(CustomerAccessEvents::ENTITY_SPY_UNAUTHENTICATED_CUSTOMER_ACCESS_CREATE, new CustomerAccessStorageBulkListener(), 0, null, $this->getConfig()->getEventQueueName());
     }
 
-    /**
-     * @param \Spryker\Zed\Event\Dependency\EventCollectionInterface $eventCollection
-     *
-     * @return void
-     */
     protected function addUnauthenticatedCustomerAccessDeleteListener(EventCollectionInterface $eventCollection): void
     {
         $eventCollection->addListenerQueued(CustomerAccessEvents::ENTITY_SPY_UNAUTHENTICATED_CUSTOMER_ACCESS_DELETE, new CustomerAccessStorageBulkListener(), 0, null, $this->getConfig()->getEventQueueName());
     }
 
-    /**
-     * @param \Spryker\Zed\Event\Dependency\EventCollectionInterface $eventCollection
-     *
-     * @return void
-     */
     protected function addUnauthenticatedCustomerAccessPublishListener(EventCollectionInterface $eventCollection): void
     {
         $eventCollection->addListenerQueued(CustomerAccessStorageConfig::UNAUTHENTICATED_CUSTOMER_ACCESS_PUBLISH, new CustomerAccessStorageBulkListener(), 0, null, $this->getConfig()->getEventQueueName());

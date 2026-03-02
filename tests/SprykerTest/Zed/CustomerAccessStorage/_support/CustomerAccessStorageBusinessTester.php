@@ -42,9 +42,6 @@ class CustomerAccessStorageBusinessTester extends Actor
      */
     protected const DEFAULT_CURRENCY = 'EUR';
 
-    /**
-     * @return void
-     */
     public function addDependencies(): void
     {
         $this->setDependency(ClientStoreDependencyProvider::PLUGINS_STORE_EXPANDER, [
@@ -52,17 +49,11 @@ class CustomerAccessStorageBusinessTester extends Actor
         ]);
     }
 
-    /**
-     * @return \Spryker\Zed\CustomerAccessStorage\Business\CustomerAccessStorageFacadeInterface
-     */
     public function getFacade(): CustomerAccessStorageFacadeInterface
     {
         return $this->getLocator()->customerAccessStorage()->facade();
     }
 
-    /**
-     * @return \Spryker\Client\StoreExtension\Dependency\Plugin\StoreExpanderPluginInterface
-     */
     protected function createStoreStorageStoreExpanderPluginMock(): StoreExpanderPluginInterface
     {
         $storeTransfer = (new StoreTransfer())

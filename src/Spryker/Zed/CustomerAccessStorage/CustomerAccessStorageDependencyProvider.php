@@ -34,11 +34,6 @@ class CustomerAccessStorageDependencyProvider extends AbstractBundleDependencyPr
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addCustomerAccessPropelQuery(Container $container): Container
     {
         $container->set(static::PROPEL_QUERY_CUSTOMER_ACCESS, $container->factory(function () {

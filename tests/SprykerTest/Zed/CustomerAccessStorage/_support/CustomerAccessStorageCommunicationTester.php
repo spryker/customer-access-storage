@@ -32,17 +32,11 @@ class CustomerAccessStorageCommunicationTester extends Actor
 {
     use _generated\CustomerAccessStorageCommunicationTesterActions;
 
-    /**
-     * @return void
-     */
     public function ensureUnauthenticatedCustomerAccessTableIsEmpty(): void
     {
         $this->getUnauthenticatedCustomerAccessQuery()->deleteAll();
     }
 
-    /**
-     * @return \Orm\Zed\CustomerAccess\Persistence\SpyUnauthenticatedCustomerAccessQuery
-     */
     protected function getUnauthenticatedCustomerAccessQuery(): SpyUnauthenticatedCustomerAccessQuery
     {
         return SpyUnauthenticatedCustomerAccessQuery::create();

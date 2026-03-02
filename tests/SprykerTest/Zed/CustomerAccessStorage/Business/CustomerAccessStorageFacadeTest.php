@@ -33,9 +33,6 @@ class CustomerAccessStorageFacadeTest extends Unit
      */
     protected $tester;
 
-    /**
-     * @return void
-     */
     public function setUp(): void
     {
         parent::setUp();
@@ -50,9 +47,6 @@ class CustomerAccessStorageFacadeTest extends Unit
         $this->tester->addDependencies();
     }
 
-    /**
-     * @return void
-     */
     public function testPublishStoresEntityData(): void
     {
         $customerAccessTransfer = $this->tester->haveCustomerAccess(
@@ -71,9 +65,6 @@ class CustomerAccessStorageFacadeTest extends Unit
         $this->assertStringContainsString(json_encode($customerAccessTransfer->getContentTypeAccess()[0]->toArray()), json_encode($customerAccessEntity->getData()));
     }
 
-    /**
-     * @return \Orm\Zed\CustomerAccessStorage\Persistence\SpyUnauthenticatedCustomerAccessStorage
-     */
     protected function getUnauthenticatedCustomerAccessEntity(): SpyUnauthenticatedCustomerAccessStorage
     {
         $persistenceFactory = new CustomerAccessStoragePersistenceFactory();

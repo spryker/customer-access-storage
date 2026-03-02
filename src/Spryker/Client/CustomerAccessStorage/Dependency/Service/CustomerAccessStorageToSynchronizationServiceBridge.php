@@ -24,11 +24,6 @@ class CustomerAccessStorageToSynchronizationServiceBridge implements CustomerAcc
         $this->synchronizationService = $synchronizationService;
     }
 
-    /**
-     * @param string $resourceName
-     *
-     * @return \Spryker\Service\Synchronization\Dependency\Plugin\SynchronizationKeyGeneratorPluginInterface
-     */
     public function getStorageKeyBuilder(string $resourceName): SynchronizationKeyGeneratorPluginInterface
     {
         return $this->synchronizationService->getStorageKeyBuilder($resourceName);

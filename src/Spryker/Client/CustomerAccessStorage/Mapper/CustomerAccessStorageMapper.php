@@ -11,12 +11,6 @@ use Generated\Shared\Transfer\CustomerAccessTransfer;
 
 class CustomerAccessStorageMapper implements CustomerAccessStorageMapperInterface
 {
-    /**
-     * @param array $unauthenticatedCustomerAccess
-     * @param \Generated\Shared\Transfer\CustomerAccessTransfer $customerAccessTransfer
-     *
-     * @return \Generated\Shared\Transfer\CustomerAccessTransfer
-     */
     public function mapArrayToCustomerAccessTransfer(
         array $unauthenticatedCustomerAccess,
         CustomerAccessTransfer $customerAccessTransfer

@@ -11,10 +11,5 @@ use Generated\Shared\Transfer\CustomerAccessTransfer;
 
 interface CustomerAccessStorageEntityManagerInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\CustomerAccessTransfer $customerAccessTransfer
-     *
-     * @return void
-     */
     public function storeData(CustomerAccessTransfer $customerAccessTransfer): void;
 }

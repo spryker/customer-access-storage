@@ -15,11 +15,6 @@ use Spryker\Zed\Kernel\Persistence\AbstractEntityManager;
  */
 class CustomerAccessStorageEntityManager extends AbstractEntityManager implements CustomerAccessStorageEntityManagerInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\CustomerAccessTransfer $customerAccessTransfer
-     *
-     * @return void
-     */
     public function storeData(CustomerAccessTransfer $customerAccessTransfer): void
     {
         $storageEntityTransfer = $this->getFactory()->createCustomerAccessStorageQuery()->findOneOrCreate();
