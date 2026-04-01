@@ -18,4 +18,14 @@ class CustomerAccessStorageConfig
      * @var string
      */
     public const UNAUTHENTICATED_CUSTOMER_ACCESS_PUBLISH = 'CustomerAccess.unauthenticated_customer_access.publish';
+
+    /**
+     * Specification:
+     * - Queue name used for customer access publish events.
+     *
+     * @api
+     *
+     * @var string
+     */
+    public const string PUBLISH_CUSTOMER_ACCESS_QUEUE = 'publish.customer_access';
 }
